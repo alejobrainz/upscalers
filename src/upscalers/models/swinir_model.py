@@ -53,7 +53,7 @@ class UpscalerSwinIR(Upscaler):
 
     def load_model(self, path, scale=4):
         if "http" in path:
-            dl_name = "%s%s" % (self.model_name.replace(" ", "_"), ".pth")
+            dl_name = "%s%s" % (self.model_name, ".pth")
             filename = load_file_from_url(url=path, model_dir=self.model_path, file_name=dl_name, progress=True)
         else:
             filename = path
